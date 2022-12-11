@@ -1,14 +1,14 @@
-import { LeafletContainer } from "../maps/leaflet/leaflet-container";
-import { MapboxContainer } from "../maps/mapbox/mapbox-container";
+import {LeafletContainer} from '../maps/leaflet/leaflet-container';
+import {MapboxContainer} from '../maps/mapbox/mapbox-container';
 
 export const Main: React.FC = () => {
     return (
         <div className="row">
             <div className="col">
-                <LeafletContainer />
+                <LeafletContainer/>
             </div>
             <div className="col">
-                <MapboxContainer />
+                <MapboxContainer/>
             </div>
         </div>
     );

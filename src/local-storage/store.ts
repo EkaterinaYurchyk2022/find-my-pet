@@ -1,4 +1,4 @@
-import { Pet, Store } from "../models";
+import {Pet, Store} from '../models';
 
 export function getPets(): Pet[] {
     const petsItem = localStorage.getItem(Store.Pets);

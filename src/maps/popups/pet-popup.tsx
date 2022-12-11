@@ -1,5 +1,5 @@
-import { Button } from 'react-bootstrap';
-import { Coordinates } from '../../models';
+import {Button} from 'react-bootstrap';
+import {Coordinates} from '../../models';
 import './pet-popup.css';
 
 interface PetPopupProps {
@@ -10,7 +10,7 @@ interface PetPopupProps {
     getDirection: (coordinates: Coordinates) => void;
 }
 
-export const PetPopup: React.FC<PetPopupProps> = ({ avatar, description, name, coordinates, getDirection }) => {
+export const PetPopup: React.FC<PetPopupProps> = ({avatar, description, name, coordinates, getDirection}) => {
     return (
         <div className="pet-popup">
             <img src={avatar} className="pet-popup-img"/>
@@ -18,4 +18,5 @@ export const PetPopup: React.FC<PetPopupProps> = ({ avatar, description, name, c
             <Button onClick={() => getDirection(coordinates)}>Direction</Button>
             <p>{description}</p>
         </div>
-    )}
+    )
+}
