@@ -1,9 +1,4 @@
-import { useEffect, useState } from 'react';
-
-export interface IExpandedItem {
-    name: string;
-    isExpanded: boolean;
-}
+import {useEffect, useState} from 'react';
 
 function useGeoLocation() {
     const [position, setPosition] = useState<GeolocationCoordinates | undefined>()
@@ -12,13 +7,14 @@ function useGeoLocation() {
     useEffect(() => {
         const geo = navigator.geolocation;
         if (!geo) {
-            setError("Location data not available");
+            setError('Location data not available');
             return;
         }
-        const watcher = geo.watchPosition((e) => setPosition(e.coords), (e) => setError(e.message));
+        const watcher = geo.watchPosition((e) => {
+            setPosition(e.coords)
+        }, (e) => setError(e.message));
         return () => geo.clearWatch(watcher);
-    }, []);
-
+    }, [setPosition, setError]);
 
     return {
         position,
