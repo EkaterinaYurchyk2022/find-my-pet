@@ -1,6 +1,6 @@
 import './mapbox-container.css';
 import mapboxgl, {Map, Marker, Popup} from 'mapbox-gl';
-import {useEffect, useRef, useState} from 'react';
+import {useEffect, useRef} from 'react';
 import useGeoLocation from '../../hooks/geo-location-hook';
 import {getPets} from '../../local-storage/store';
 import ReactDOM from 'react-dom/client';
@@ -95,7 +95,7 @@ export const MapboxContainer: React.FC = () => {
                     description={p.description}
                     name={p.name}
                     coordinates={p.coordinates}
-                    getDirection={getDirectionCallback} />
+                    getDirection={getDirectionCallback}/>
             );
             popup.setDOMContent(popupEl);
             marker.setLngLat(p.coordinates).setPopup(popup).addTo(map.current!);

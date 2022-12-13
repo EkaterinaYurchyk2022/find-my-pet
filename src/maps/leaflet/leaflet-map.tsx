@@ -9,7 +9,6 @@ import L from 'leaflet';
 export const LeafletMap: React.FC = () => {
     const {position} = useGeoLocation();
     const {userLocation} = useUserDefaultLocation(position);
-
     const pets = getPets();
 
     const map = useMap();

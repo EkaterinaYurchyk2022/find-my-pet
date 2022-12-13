@@ -10,13 +10,11 @@ import {addPet} from '../../local-storage/store';
 import useUserDefaultLocation from '../../hooks/user-default-location-hook';
 import {PetForm} from '../forms/pet-form';
 
-
 export const AddPetForm: React.FC = () => {
     const mapContainer = useRef<HTMLDivElement>(null);
     const map = useRef<Map>();
     const {position, error} = useGeoLocation();
     const {userLocation} = useUserDefaultLocation(position);
-
     const [coordinates, setCoordinates] = useState<Coordinates>();
 
     const navigate = useNavigate();
@@ -37,8 +35,9 @@ export const AddPetForm: React.FC = () => {
             coordinates: {
                 lat: coordinates.lat,
                 lng: coordinates.lng
-            },
+            }
         };
+        ;
         addPet(newPet);
         navigate('../');
     }
